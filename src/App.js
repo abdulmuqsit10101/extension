@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const data = useState('hhaa');
+
+
+    useEffect(() => {
+        console.log("I am here loaded! and Data : ", data);
+
+        function myFunction() {
+            var arr = [];
+
+            const x = document.querySelectorAll(".user-details a");
+            var i;
+            for (i = 0; i < x.length; i++) {
+                arr = arr.concat(x[i].innerHTML);
+            }
+            console.log("arr is  : ", arr);
+        }
+
+        myFunction();
+
+
+        // var mutationObserver = new MutationObserver(function () {
+        //     return myFunction();
+        // });
+        //
+        // mutationObserver.observe(document.querySelector('body'), {
+        //     attributes: true,
+        //     characterData: true,
+        //     childList: true,
+        //     subtree: true,
+        //     attributeOldValue: true,
+        //     characterDataOldValue: true
+        // });
+
+    });
+    return (
+        <div className="App">
+        </div>
+    );
 }
 
 export default App;
